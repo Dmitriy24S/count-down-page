@@ -150,6 +150,7 @@ p {
 .countdown-container {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 .info h3 {
   text-transform: uppercase;
@@ -158,6 +159,11 @@ p {
 .info p {
   color: var(--clr-grey-6);
   margin: 2rem 0;
+}
+.countdown-container h4:not(.expired) {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: var(--spacing);
 }
 .countdown-number {
   display: -ms-grid;
@@ -170,20 +176,31 @@ p {
   width: 5rem;
   height: 5rem;
 }
-.countdown-container h4:not(.expired) {
-  font-size: 2rem;
-  margin-bottom: 0.25rem;
-  letter-spacing: var(--spacing);
+.countdown-number span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
 }
 
 /* desktop */
+@media (min-width: 620px) {
+  .info {
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+}
 @media screen and (min-width: 992px) {
   .section-center {
     display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     place-items: center;
     gap: 3rem;
     width: 95vw;
+  }
+  .countdown-container {
+    justify-content: flex-start;
   }
 }
